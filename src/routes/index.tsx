@@ -271,19 +271,19 @@ function Index() {
 
         <section
           id="diferenciais"
-          className="on-dark scroll-mt-16 bg-wine px-5 py-16 text-wine-foreground"
+          className="scroll-mt-16 bg-background px-5 py-16 text-foreground"
         >
           <div className="mx-auto max-w-4xl">
-            <Titulo claro>Nossos diferenciais</Titulo>
-            <ul className="grid rounded-2xl border-2 border-dashed border-wine-muted/40 bg-white/5 sm:grid-cols-3">
+            <Titulo>Nossos diferenciais</Titulo>
+            <ul className="grid rounded-2xl border-2 border-dashed border-stitch bg-card sm:grid-cols-3">
               {difs.map(({ t, d, icon: I }) => (
                 <li
                   key={t}
-                  className="border-wine-muted/40 p-6 not-first:border-t-2 not-first:border-dashed sm:border-t-0 sm:not-first:border-l-2 sm:not-first:border-t-0 sm:not-first:border-dashed"
+                  className="border-stitch p-6 not-first:border-t-2 not-first:border-dashed sm:border-t-0 sm:not-first:border-l-2 sm:not-first:border-t-0 sm:not-first:border-dashed"
                 >
-                  <I aria-hidden="true" className="h-9 w-9 text-linen" />
+                  <I aria-hidden="true" className="h-9 w-9 text-primary" />
                   <h3 className="mt-3 text-xl font-semibold">{t}</h3>
-                  <p className="mt-1 text-lg text-wine-muted">{d}</p>
+                  <p className="mt-1 text-lg text-foreground">{d}</p>
                 </li>
               ))}
             </ul>
