@@ -73,14 +73,14 @@
 }
 
 @utility stitch {
-  border: 2px dashed var(--color-stitch);
+  border: 2px dashed var(--stitch);
 }
 
 /* Fita métrica: marcas a cada 8px, mais altas a cada 40px. */
 @utility fita-metrica {
   background-image:
-    repeating-linear-gradient(90deg, var(--color-stitch) 0 1.5px, transparent 1.5px 40px),
-    repeating-linear-gradient(90deg, var(--color-stitch) 0 1px, transparent 1px 8px);
+    repeating-linear-gradient(90deg, var(--stitch) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(90deg, var(--stitch) 0 1px, transparent 1px 8px);
   background-size: 100% 100%, 100% 55%;
   background-position: 0 0, 0 0;
   background-repeat: no-repeat, no-repeat;

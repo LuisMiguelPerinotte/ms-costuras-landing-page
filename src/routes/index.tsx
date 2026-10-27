@@ -139,49 +139,53 @@ function Index() {
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
       </section>
 
-      <section id="servicos" className="mx-auto max-w-4xl scroll-mt-16 px-5 py-16">
+      <section id="servicos" className="scroll-mt-16 px-5 py-16">
+       <div className="mx-auto max-w-4xl">
         <Titulo>Serviços e preços</Titulo>
         <div className="stitch overflow-hidden rounded-2xl bg-card shadow-sm">
           <div aria-hidden="true" className="fita-metrica h-4 border-b border-border" />
           <ul className="px-4 py-3 sm:px-8 sm:py-5">
             {servicos.map(({ nome, preco, icon: I }) => (
-              <li key={nome} className="flex items-end gap-2 py-3 sm:gap-3">
-                <I aria-hidden="true" className="mb-1 h-5 w-5 shrink-0 text-primary" />
+              <li key={nome} className="flex items-baseline gap-2 py-3 sm:gap-3">
+                <I aria-hidden="true" className="h-5 w-5 shrink-0 self-center text-primary" />
                 <span className="min-w-0 font-semibold sm:text-lg">{nome}</span>
-                <span aria-hidden="true" className="mb-2 min-w-4 flex-1 border-b-2 border-dashed border-stitch" />
+                <span aria-hidden="true" className="min-w-4 flex-1 border-b-2 border-dashed border-stitch" />
                 <span className="shrink-0 font-display text-2xl font-semibold leading-none text-primary sm:text-3xl">{preco}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+       </div>
+      </section>
+
+      <section id="diferenciais" className="on-dark scroll-mt-16 bg-wine px-5 py-16 text-wine-foreground">
+        <div className="mx-auto max-w-4xl">
+          <Titulo claro>Nossos diferenciais</Titulo>
+          <ul className="grid rounded-2xl border-2 border-dashed border-wine-muted/40 bg-white/5 sm:grid-cols-3">
+            {difs.map(({ t, d, icon: I }) => (
+              <li key={t} className="border-wine-muted/40 p-6 not-first:border-t-2 not-first:border-dashed sm:border-t-0 sm:not-first:border-l-2 sm:not-first:border-t-0 sm:not-first:border-dashed">
+                <I aria-hidden="true" className="h-9 w-9 text-linen" />
+                <h3 className="mt-3 text-xl font-semibold">{t}</h3>
+                <p className="mt-1 text-wine-muted">{d}</p>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section id="diferenciais" className="scroll-mt-16 bg-wine px-5 py-16 text-wine-foreground">
-       <div className="mx-auto max-w-4xl">
-        <Titulo claro>Nossos diferenciais</Titulo>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {difs.map(({ t, d, icon: I }) => (
-            <div key={t} className="stitch rounded-2xl bg-card p-6 text-center">
-              <I className="mx-auto h-10 w-10 text-primary" />
-              <h3 className="mt-3 text-xl font-semibold">{t}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{d}</p>
-            </div>
-          ))}
-        </div>
-       </div>
-      </section>
-
       <section id="horario" className="scroll-mt-16 bg-linen px-5 py-16">
-       <div className="mx-auto max-w-4xl">
-        <Titulo>Horário e localização</Titulo>
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="space-y-4 rounded-2xl border bg-card p-6">
-            <p className="flex gap-3"><Clock className="h-6 w-6 shrink-0 text-primary" /><span><b>Segunda a sábado</b><br />9h às 12h e 14h às 17h</span></p>
-            <p className="flex gap-3"><MapPin className="h-6 w-6 shrink-0 text-primary" /><span>Nova Iguaçu - RJ</span></p>
+        <div className="mx-auto max-w-4xl">
+          <Titulo>Horário e localização</Titulo>
+          <div className="flex flex-col md:flex-row md:items-center">
+            <div className="stitch relative z-10 space-y-4 rounded-2xl bg-card p-6 pb-9 shadow-sm md:w-72 md:shrink-0 md:pb-6 md:pr-9">
+              <span aria-hidden="true" className="absolute bottom-3 left-1/2 h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-stitch bg-linen md:bottom-auto md:left-auto md:right-3 md:top-1/2 md:-translate-y-1/2 md:translate-x-0" />
+              <p className="flex gap-3"><Clock className="h-6 w-6 shrink-0 text-primary" /><span><b>Segunda a sábado</b><br />9h às 12h e 14h às 17h</span></p>
+              <p className="flex gap-3"><MapPin className="h-6 w-6 shrink-0 text-primary" /><span>Nova Iguaçu - RJ</span></p>
+            </div>
+            <span aria-hidden="true" className="mx-auto h-8 border-l-2 border-dashed border-stitch md:mx-0 md:h-0 md:w-10 md:border-l-0 md:border-t-2" />
+            <iframe title="Mapa" src={MAPA} loading="lazy" className="stitch h-72 w-full rounded-2xl bg-card shadow-sm md:h-96 md:flex-1" />
           </div>
-          <iframe title="Mapa" src={MAPA} loading="lazy" className="h-64 w-full rounded-2xl border md:h-full" />
         </div>
-       </div>
       </section>
 
       <section id="contato" className="scroll-mt-16 bg-primary px-5 py-16 text-center text-primary-foreground">
