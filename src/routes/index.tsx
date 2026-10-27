@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, MapPin, Zap, ShieldCheck, BadgeDollarSign, Spool, Menu, X, Replace, FoldHorizontal, ScissorsLineDashed, Combine, WandSparkles } from "lucide-react";
 import { InstagramIcon, WhatsAppIcon } from "@/components/brand-icons";
@@ -43,7 +43,7 @@ const difs = [
 function WaButton({ children }: { children: React.ReactNode }) {
   return (
     <a href={WA} target="_blank" rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-bold text-whatsapp-foreground shadow-lg transition hover:scale-105">
+      className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-bold text-whatsapp-foreground shadow-lg transition motion-safe:hover:scale-105">
       <WhatsAppIcon className="h-5 w-5" /> {children}
     </a>
   );
@@ -62,38 +62,51 @@ const NAV_LINKS = [
 
 function Navbar() {
   const [aberto, setAberto] = useState(false);
+  const botao = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!aberto) return;
+    const fechar = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setAberto(false);
+      botao.current?.focus();
+    };
+    document.addEventListener("keydown", fechar);
+    return () => document.removeEventListener("keydown", fechar);
+  }, [aberto]);
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-5">
-        <a href="#inicio" className="flex items-center gap-2 font-semibold text-primary">
+        <a href="#inicio" className="flex min-h-11 items-center gap-2 font-semibold text-primary">
           <img src={logo} alt="" className="h-8 w-auto rounded-lg" /> {NOME}
         </a>
-        <nav aria-label="Menu principal" className="hidden items-center gap-6 sm:flex">
+        <nav aria-label="Menu principal" className="hidden items-center gap-1 sm:flex">
           {NAV_LINKS.map(({ href, label }) => (
-            <a key={href} href={href} className="text-sm font-medium text-muted-foreground transition hover:text-primary">
+            <a key={href} href={href} className="flex min-h-11 items-center rounded-lg px-3 text-sm font-medium text-muted-foreground transition hover:text-primary">
               {label}
             </a>
           ))}
         </nav>
         <button
+          ref={botao}
           type="button"
+          aria-controls="menu-celular"
           aria-label={aberto ? "Fechar menu" : "Abrir menu"}
           aria-expanded={aberto}
           onClick={() => setAberto((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-full text-primary sm:hidden"
+          className="grid h-11 w-11 place-items-center rounded-full text-primary sm:hidden"
         >
           {aberto ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
       {aberto && (
-        <nav aria-label="Menu celular" className="border-t border-border bg-background px-5 py-3 sm:hidden">
+        <nav id="menu-celular" aria-label="Menu celular" className="border-t border-border bg-background px-5 py-3 sm:hidden">
           <ul className="space-y-1">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href}>
                 <a
                   href={href}
                   onClick={() => setAberto(false)}
-                  className="block rounded-lg px-3 py-2 font-medium text-muted-foreground transition hover:bg-secondary hover:text-primary"
+                  className="flex min-h-11 items-center rounded-lg px-3 font-medium text-muted-foreground transition hover:bg-secondary hover:text-primary"
                 >
                   {label}
                 </a>
@@ -172,7 +185,7 @@ function Index() {
       </section>
 
       <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-xl transition hover:scale-110">
+        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-xl transition motion-safe:hover:scale-110">
         <WhatsAppIcon className="h-7 w-7" />
       </a>
     </main>
