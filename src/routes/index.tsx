@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Scissors, Ruler, Shirt, Clock, MapPin, Instagram, MessageCircle, Zap, ShieldCheck, BadgeDollarSign, Spool } from "lucide-react";
 
-const NOME = "Ateliê Ponto Rosa";
-const WHATS = "5521999999999";
+const NOME = "Ms Costuras";
+const WHATS = "5521973250376";
 const MSG = encodeURIComponent("Olá! Vim pelo site e gostaria de fazer um orçamento de costura.");
 const WA = `https://wa.me/${WHATS}?text=${MSG}`;
-const INSTA = "https://instagram.com/atelie.pontorosa";
-const MAPA = "https://www.google.com/maps?q=Nova+Igua%C3%A7u,+RJ&output=embed";
+const INSTA = "https://instagram.com/ms_costuras65";
+const MAPA = "https://www.google.com/maps?q=Avenida+Recife,+20,+Nova+Igua%C3%A7u,+Rio+de+Janeiro&output=embed";
 
 export const Route = createFileRoute("/")({
   head: () => ({
