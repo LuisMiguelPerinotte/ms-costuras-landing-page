@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, MapPin, Zap, ShieldCheck, BadgeDollarSign, Spool, Menu, X, Replace, FoldHorizontal, ScissorsLineDashed, Combine, WandSparkles } from "lucide-react";
 import { InstagramIcon, WhatsAppIcon } from "@/components/brand-icons";
-import logo from "@/assets/logo-ms-costuras.jpg";
+import logo from "@/assets/logo-ms-costuras.webp";
+import logoNav from "@/assets/logo-ms-costuras-nav.webp";
 
 const NOME = "Ms Costuras";
 const WHATS = "5521973250376";
@@ -77,7 +78,7 @@ function Navbar() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-5">
         <a href="#inicio" className="flex min-h-11 items-center gap-2 font-semibold text-primary">
-          <img src={logo} alt="" className="h-8 w-auto rounded-lg" /> {NOME}
+          <img src={logoNav} alt="" width={93} height={64} loading="eager" decoding="async" className="h-8 w-auto rounded-lg" /> {NOME}
         </a>
         <nav aria-label="Menu principal" className="hidden items-center gap-1 sm:flex">
           {NAV_LINKS.map(({ href, label }) => (
@@ -128,7 +129,7 @@ function Index() {
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-semibold text-primary shadow-sm">
           <Clock className="h-4 w-4" /> Atendimento de seg a sáb
         </span>
-        <img src={logo} alt={`Logo ${NOME}`} className="mx-auto mt-6 h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]" />
+        <img src={logo} alt={`Logo ${NOME}`} width={560} height={560} loading="eager" fetchPriority="high" decoding="async" className="mx-auto mt-6 h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]" />
         <p className="mx-auto mt-8 max-w-md font-display text-2xl font-semibold text-primary sm:text-3xl">Sua roupa do jeitinho certo</p>
         <p className="mx-auto mt-3 max-w-md text-lg text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
