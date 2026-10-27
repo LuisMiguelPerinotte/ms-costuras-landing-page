@@ -39,7 +39,7 @@ Relaciona-se também com a **ODS 10 - Redução das Desigualdades**, ao levar te
 | Vite | Build e servidor de desenvolvimento |
 | Tailwind CSS | Estilização |
 | Git e GitHub | Versionamento e histórico do projeto |
-| [Vercel/Netlify] | Hospedagem e deploy |
+| [Vercel] | Hospedagem e deploy |
 
 ## Como rodar localmente
 
