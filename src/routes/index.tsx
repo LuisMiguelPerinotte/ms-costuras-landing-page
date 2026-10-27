@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Scissors, Ruler, Shirt, Clock, MapPin, Instagram, MessageCircle, Zap, ShieldCheck, BadgeDollarSign, Spool, Menu, X } from "lucide-react";
+import logoAsset from "@/assets/logo-ms-costuras.jpg.asset.json";
 
 const NOME = "Ms Costuras";
 const WHATS = "5521973250376";
@@ -64,7 +65,7 @@ function Navbar() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-5">
         <a href="#inicio" className="flex items-center gap-2 font-semibold text-primary">
-          <Scissors className="h-5 w-5" /> {NOME}
+          <img src={logoAsset.url} alt="" className="h-8 w-auto rounded-lg" /> {NOME}
         </a>
         <nav aria-label="Menu principal" className="hidden items-center gap-6 sm:flex">
           {NAV_LINKS.map(({ href, label }) => (
@@ -109,9 +110,7 @@ function Index() {
     <main className="overflow-x-hidden">
       <Navbar />
       <section id="inicio" className="bg-secondary px-5 pb-16 pt-32 text-center">
-        <div className="stitch mx-auto grid h-32 w-32 place-items-center rounded-full bg-primary text-primary-foreground shadow-xl">
-          <Scissors className="h-14 w-14" />
-        </div>
+        <img src={logoAsset.url} alt={`Logo ${NOME}`} className="mx-auto w-64 max-w-full rounded-3xl shadow-xl" />
         <h1 className="mt-6 text-4xl font-semibold text-primary sm:text-5xl">{NOME}</h1>
         <p className="mx-auto mt-3 max-w-md text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
