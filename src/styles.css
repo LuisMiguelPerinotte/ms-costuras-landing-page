@@ -56,3 +56,11 @@
 @utility stitch {
   border: 2px dashed var(--color-accent);
 }
+
+@utility fabric-texture {
+  background-image:
+    radial-gradient(circle, color-mix(in oklab, var(--color-primary) 16%, transparent) 1.5px, transparent 2px),
+    radial-gradient(circle, color-mix(in oklab, var(--color-primary) 9%, transparent) 1px, transparent 1.5px);
+  background-size: 28px 28px, 28px 28px;
+  background-position: 0 0, 14px 14px;
+}

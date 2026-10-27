@@ -109,10 +109,14 @@ function Index() {
   return (
     <main className="overflow-x-hidden">
       <Navbar />
-      <section id="inicio" className="bg-secondary px-5 pb-16 pt-32 text-center">
+      <section id="inicio" className="fabric-texture relative overflow-hidden px-5 pb-16 pt-28 text-center">
         <h1 className="sr-only">{NOME} — Costura e ajustes em Nova Iguaçu - RJ</h1>
-        <img src={logoAsset.url} alt={`Logo ${NOME}`} className="mx-auto h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]" />
-        <p className="mx-auto mt-8 max-w-md text-lg text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
+        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-semibold text-primary shadow-sm">
+          <Clock className="h-4 w-4" /> Atendimento de seg a sáb
+        </span>
+        <img src={logoAsset.url} alt={`Logo ${NOME}`} className="mx-auto mt-6 h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]" />
+        <p className="mx-auto mt-8 max-w-md font-display text-2xl font-semibold text-primary sm:text-3xl">Sua roupa do jeitinho certo</p>
+        <p className="mx-auto mt-3 max-w-md text-lg text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
       </section>
 
