@@ -256,7 +256,7 @@ function Index() {
         </section>
 
         <section id="servicos" className="scroll-mt-16 px-5 py-16">
-          <div className="mx-auto max-w-4xl">
+          <div data-reveal className="mx-auto max-w-4xl">
             <Titulo>Serviços e preços</Titulo>
             <div className="stitch overflow-hidden rounded-2xl bg-card shadow-sm">
               <div aria-hidden="true" className="fita-metrica h-4 border-b border-border" />
@@ -280,7 +280,7 @@ function Index() {
         </section>
 
         <section id="como-funciona" className="scroll-mt-16 bg-linen px-5 py-16">
-          <div className="mx-auto max-w-4xl">
+          <div data-reveal className="mx-auto max-w-4xl">
             <Titulo>Como funciona</Titulo>
             <ol className="md:grid md:grid-cols-3">
               {passos.map((passo, i) => (
@@ -300,7 +300,7 @@ function Index() {
           id="diferenciais"
           className="scroll-mt-16 bg-background px-5 py-16 text-foreground"
         >
-          <div className="mx-auto max-w-4xl">
+          <div data-reveal className="mx-auto max-w-4xl">
             <Titulo>Nossos diferenciais</Titulo>
             <ul className="grid rounded-2xl border-2 border-dashed border-stitch bg-card sm:grid-cols-3">
               {difs.map(({ t, d, icon: I }) => (
@@ -318,7 +318,7 @@ function Index() {
         </section>
 
         <section id="horario" className="scroll-mt-16 bg-linen px-5 py-16">
-          <div className="mx-auto max-w-4xl">
+          <div data-reveal className="mx-auto max-w-4xl">
             <Titulo>Horário e localização</Titulo>
             <div className="grid gap-8 md:grid-cols-2 md:gap-10">
               <div className="stitch relative flex flex-col justify-center gap-6 rounded-2xl bg-card p-5 pb-10 shadow-sm md:p-8 md:pr-12">
@@ -358,7 +358,7 @@ function Index() {
           id="contato"
           className="on-dark scroll-mt-16 bg-wine px-5 py-16 text-wine-foreground"
         >
-          <div className="mx-auto max-w-4xl">
+          <div data-reveal className="mx-auto max-w-4xl">
             <Titulo claro>Fale com a gente</Titulo>
             <p className="max-w-md text-lg">Mande uma mensagem e faça seu orçamento.</p>
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
@@ -377,7 +377,10 @@ function Index() {
       </main>
 
       <footer className="on-dark bg-wine px-5 pb-24 text-wine-foreground sm:pb-14">
-        <div className="mx-auto max-w-4xl border-t-2 border-dashed border-wine-muted/40 pt-14">
+        <div
+          data-reveal
+          className="mx-auto max-w-4xl border-t-2 border-dashed border-wine-muted/40 pt-14"
+        >
           <div className="grid gap-10 md:grid-cols-3">
             <div>
               <p className="flex items-center gap-3 font-display text-2xl font-semibold">

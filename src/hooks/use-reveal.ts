@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const ALVOS = "[data-costura]";
+const ALVOS = "[data-costura], [data-reveal]";
 
 // Marca `is-visible` nos alvos conforme entram na tela. O CSS só esconde sob `.reveal-ready`,
 // então sem JS ou com movimento reduzido tudo aparece direto, no estado final.
