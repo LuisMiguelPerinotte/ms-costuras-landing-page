@@ -20,8 +20,8 @@ import { useReveal } from "@/hooks/use-reveal";
 import logo from "@/assets/logo-ms-costuras.webp";
 import logoNav from "@/assets/logo-ms-costuras-nav.webp";
 
-// shortcut: domínio de produção desconhecido, preencher com a URL do site (ex.: https://seu-dominio.com.br) para a prévia do WhatsApp funcionar
-const SITE_URL = "";
+// og:image e og:url exigem URL absoluta (prévia do WhatsApp)
+const SITE_URL = "https://ms-costuras-two.vercel.app";
 const NOME = "Ms Costuras";
 const WHATS = "5521973250376";
 const MSG = encodeURIComponent("Olá! Vim pelo site e gostaria de fazer um orçamento de costura.");
