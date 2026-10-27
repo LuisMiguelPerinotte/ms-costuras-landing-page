@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Scissors, Ruler, Shirt, Clock, MapPin, Instagram, MessageCircle, Zap, ShieldCheck, BadgeDollarSign, Spool } from "lucide-react";
+import { Scissors, Ruler, Shirt, Clock, MapPin, Instagram, MessageCircle, Zap, ShieldCheck, BadgeDollarSign, Spool, Menu, X } from "lucide-react";
 
 const NOME = "Ms Costuras";
 const WHATS = "5521973250376";
@@ -50,10 +51,64 @@ function Titulo({ children }: { children: React.ReactNode }) {
   return <h2 className="mb-8 text-center text-3xl font-semibold text-primary">{children}</h2>;
 }
 
+const NAV_LINKS = [
+  { href: "#servicos", label: "Serviços" },
+  { href: "#diferenciais", label: "Diferenciais" },
+  { href: "#horario", label: "Horário" },
+  { href: "#contato", label: "Contato" },
+];
+
+function Navbar() {
+  const [aberto, setAberto] = useState(false);
+  return (
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
+      <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-5">
+        <a href="#inicio" className="flex items-center gap-2 font-semibold text-primary">
+          <Scissors className="h-5 w-5" /> {NOME}
+        </a>
+        <nav aria-label="Menu principal" className="hidden items-center gap-6 sm:flex">
+          {NAV_LINKS.map(({ href, label }) => (
+            <a key={href} href={href} className="text-sm font-medium text-muted-foreground transition hover:text-primary">
+              {label}
+            </a>
+          ))}
+        </nav>
+        <button
+          type="button"
+          aria-label={aberto ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={aberto}
+          onClick={() => setAberto((v) => !v)}
+          className="grid h-10 w-10 place-items-center rounded-full text-primary sm:hidden"
+        >
+          {aberto ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+      {aberto && (
+        <nav aria-label="Menu celular" className="border-t border-border bg-background px-5 py-3 sm:hidden">
+          <ul className="space-y-1">
+            {NAV_LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  onClick={() => setAberto(false)}
+                  className="block rounded-lg px-3 py-2 font-medium text-muted-foreground transition hover:bg-secondary hover:text-primary"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </header>
+  );
+}
+
 function Index() {
   return (
     <main className="overflow-x-hidden">
-      <section id="inicio" className="bg-secondary px-5 pb-16 pt-20 text-center">
+      <Navbar />
+      <section id="inicio" className="bg-secondary px-5 pb-16 pt-32 text-center">
         <div className="stitch mx-auto grid h-32 w-32 place-items-center rounded-full bg-primary text-primary-foreground shadow-xl">
           <Scissors className="h-14 w-14" />
         </div>
@@ -62,7 +117,7 @@ function Index() {
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
       </section>
 
-      <section id="servicos" className="mx-auto max-w-4xl px-5 py-16">
+      <section id="servicos" className="mx-auto max-w-4xl scroll-mt-16 px-5 py-16">
         <Titulo>Serviços e preços</Titulo>
         <ul className="grid gap-4 sm:grid-cols-2">
           {servicos.map(({ nome, preco, icon: I }) => (
@@ -75,7 +130,7 @@ function Index() {
         </ul>
       </section>
 
-      <section id="diferenciais" className="bg-muted px-5 py-16">
+      <section id="diferenciais" className="scroll-mt-16 bg-muted px-5 py-16">
         <Titulo>Nossos diferenciais</Titulo>
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
           {difs.map(({ t, d, icon: I }) => (
@@ -88,7 +143,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="horario" className="mx-auto max-w-4xl px-5 py-16">
+      <section id="horario" className="mx-auto max-w-4xl scroll-mt-16 px-5 py-16">
         <Titulo>Horário e localização</Titulo>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-4 rounded-2xl border bg-card p-6">
@@ -99,7 +154,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="contato" className="bg-primary px-5 py-16 text-center text-primary-foreground">
+      <section id="contato" className="scroll-mt-16 bg-primary px-5 py-16 text-center text-primary-foreground">
         <h2 className="text-3xl font-semibold">Fale com a gente</h2>
         <p className="mt-2 opacity-90">Mande uma mensagem e faça seu orçamento.</p>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
