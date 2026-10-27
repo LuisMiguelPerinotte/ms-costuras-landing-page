@@ -1,24 +1,121 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Scissors, Ruler, Shirt, Clock, MapPin, Instagram, MessageCircle, Zap, ShieldCheck, BadgeDollarSign, Spool } from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const NOME = "Ateliê Ponto Rosa";
+const WHATS = "5521999999999";
+const MSG = encodeURIComponent("Olá! Vim pelo site e gostaria de fazer um orçamento de costura.");
+const WA = `https://wa.me/${WHATS}?text=${MSG}`;
+const INSTA = "https://instagram.com/atelie.pontorosa";
+const MAPA = "https://www.google.com/maps?q=Nova+Igua%C3%A7u,+RJ&output=embed";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: `${NOME} — Costura e ajustes em Nova Iguaçu` },
+      { name: "description", content: "Ajustes, bainhas, troca de zíper e pences em Nova Iguaçu - RJ. Preço justo, rapidez e confiança." },
+      { property: "og:title", content: `${NOME} — Costura em Nova Iguaçu` },
+      { property: "og:description", content: "Ajustes de roupa com preço justo e rapidez. Chame no WhatsApp!" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+const servicos = [
+  { nome: "Troca de zíper", preco: "R$ 20", icon: Shirt },
+  { nome: "Ajuste para apertar", preco: "R$ 20", icon: Ruler },
+  { nome: "Bainha", preco: "R$ 20", icon: Scissors },
+  { nome: "Pence", preco: "R$ 10", icon: Spool },
+  { nome: "Bainha + pence", preco: "R$ 30", icon: Scissors },
+  { nome: "Outros serviços", preco: "Sob consulta", icon: MessageCircle },
+];
+
+const difs = [
+  { t: "Preço justo", d: "Valores claros e honestos.", icon: BadgeDollarSign },
+  { t: "Rapidez", d: "Sua peça pronta sem demora.", icon: Zap },
+  { t: "Confiabilidade", d: "Cuidado com cada detalhe.", icon: ShieldCheck },
+];
+
+function WaButton({ children }: { children: React.ReactNode }) {
+  return (
+    <a href={WA} target="_blank" rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-bold text-whatsapp-foreground shadow-lg transition hover:scale-105">
+      <MessageCircle className="h-5 w-5" /> {children}
+    </a>
+  );
+}
+
+function Titulo({ children }: { children: React.ReactNode }) {
+  return <h2 className="mb-8 text-center text-3xl font-semibold text-primary">{children}</h2>;
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="overflow-x-hidden">
+      <section id="inicio" className="bg-secondary px-5 pb-16 pt-20 text-center">
+        <div className="stitch mx-auto grid h-32 w-32 place-items-center rounded-full bg-primary text-primary-foreground shadow-xl">
+          <Scissors className="h-14 w-14" />
+        </div>
+        <h1 className="mt-6 text-4xl font-semibold text-primary sm:text-5xl">{NOME}</h1>
+        <p className="mx-auto mt-3 max-w-md text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
+        <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
+      </section>
+
+      <section id="servicos" className="mx-auto max-w-4xl px-5 py-16">
+        <Titulo>Serviços e preços</Titulo>
+        <ul className="grid gap-4 sm:grid-cols-2">
+          {servicos.map(({ nome, preco, icon: I }) => (
+            <li key={nome} className="flex items-center gap-4 rounded-2xl border bg-card p-4">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-primary"><I className="h-6 w-6" /></span>
+              <span className="min-w-0 flex-1 font-semibold">{nome}</span>
+              <span className="shrink-0 font-bold text-primary">{preco}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="diferenciais" className="bg-muted px-5 py-16">
+        <Titulo>Nossos diferenciais</Titulo>
+        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
+          {difs.map(({ t, d, icon: I }) => (
+            <div key={t} className="stitch rounded-2xl bg-card p-6 text-center">
+              <I className="mx-auto h-10 w-10 text-primary" />
+              <h3 className="mt-3 text-xl font-semibold">{t}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="horario" className="mx-auto max-w-4xl px-5 py-16">
+        <Titulo>Horário e localização</Titulo>
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="space-y-4 rounded-2xl border bg-card p-6">
+            <p className="flex gap-3"><Clock className="h-6 w-6 shrink-0 text-primary" /><span><b>Segunda a sábado</b><br />9h às 12h e 14h às 17h</span></p>
+            <p className="flex gap-3"><MapPin className="h-6 w-6 shrink-0 text-primary" /><span>Nova Iguaçu - RJ</span></p>
+          </div>
+          <iframe title="Mapa" src={MAPA} loading="lazy" className="h-64 w-full rounded-2xl border md:h-full" />
+        </div>
+      </section>
+
+      <section id="contato" className="bg-primary px-5 py-16 text-center text-primary-foreground">
+        <h2 className="text-3xl font-semibold">Fale com a gente</h2>
+        <p className="mt-2 opacity-90">Mande uma mensagem e faça seu orçamento.</p>
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <WaButton>Enviar mensagem</WaButton>
+          <a href={INSTA} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground px-6 py-3 font-bold transition hover:bg-primary-foreground hover:text-primary">
+            <Instagram className="h-5 w-5" /> Instagram
+          </a>
+        </div>
+        <p className="mt-12 text-sm opacity-75">© {NOME} · Nova Iguaçu - RJ</p>
+      </section>
+
+      <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-xl transition hover:scale-110">
+        <MessageCircle className="h-7 w-7" />
+      </a>
+    </main>
   );
 }
