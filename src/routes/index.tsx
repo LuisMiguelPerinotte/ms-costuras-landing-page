@@ -252,7 +252,7 @@ function Index() {
           <div className="mx-auto max-w-4xl">
             <Titulo>Horário e localização</Titulo>
             <div className="flex flex-col md:flex-row md:items-center">
-              <div className="stitch relative z-10 space-y-4 rounded-2xl bg-card p-6 pb-9 shadow-sm md:w-72 md:shrink-0 md:pb-6 md:pr-9">
+              <div className="stitch relative z-10 flex flex-col gap-4 rounded-2xl bg-card p-6 pb-9 shadow-sm md:w-72 md:shrink-0 md:pb-6 md:pr-9">
                 <span
                   aria-hidden="true"
                   className="absolute bottom-3 left-1/2 h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-stitch bg-linen md:bottom-auto md:left-auto md:right-3 md:top-1/2 md:-translate-y-1/2 md:translate-x-0"
