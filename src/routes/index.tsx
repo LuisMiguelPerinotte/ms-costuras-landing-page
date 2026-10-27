@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Scissors, Ruler, Shirt, Clock, MapPin, Instagram, MessageCircle, Zap, ShieldCheck, BadgeDollarSign, Spool, Menu, X } from "lucide-react";
-import logoAsset from "@/assets/logo-ms-costuras.jpg.asset.json";
+import { Clock, MapPin, Zap, ShieldCheck, BadgeDollarSign, Spool, Menu, X, Replace, FoldHorizontal, ScissorsLineDashed, Combine, WandSparkles } from "lucide-react";
+import { InstagramIcon, WhatsAppIcon } from "@/components/brand-icons";
+import logo from "@/assets/logo-ms-costuras.jpg";
 
 const NOME = "Ms Costuras";
 const WHATS = "5521973250376";
@@ -25,12 +26,12 @@ export const Route = createFileRoute("/")({
 });
 
 const servicos = [
-  { nome: "Troca de zíper", preco: "R$ 20", icon: Shirt },
-  { nome: "Ajuste para apertar", preco: "R$ 20", icon: Ruler },
-  { nome: "Bainha", preco: "R$ 20", icon: Scissors },
+  { nome: "Troca de zíper", preco: "R$ 20", icon: Replace },
+  { nome: "Ajuste para apertar", preco: "R$ 20", icon: FoldHorizontal },
+  { nome: "Bainha", preco: "R$ 20", icon: ScissorsLineDashed },
   { nome: "Pence", preco: "R$ 10", icon: Spool },
-  { nome: "Bainha + pence", preco: "R$ 30", icon: Scissors },
-  { nome: "Outros serviços", preco: "Sob consulta", icon: MessageCircle },
+  { nome: "Bainha + pence", preco: "R$ 30", icon: Combine },
+  { nome: "Outros serviços", preco: "Sob consulta", icon: WandSparkles },
 ];
 
 const difs = [
@@ -43,7 +44,7 @@ function WaButton({ children }: { children: React.ReactNode }) {
   return (
     <a href={WA} target="_blank" rel="noopener noreferrer"
       className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-bold text-whatsapp-foreground shadow-lg transition hover:scale-105">
-      <MessageCircle className="h-5 w-5" /> {children}
+      <WhatsAppIcon className="h-5 w-5" /> {children}
     </a>
   );
 }
@@ -65,7 +66,7 @@ function Navbar() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-5">
         <a href="#inicio" className="flex items-center gap-2 font-semibold text-primary">
-          <img src={logoAsset.url} alt="" className="h-8 w-auto rounded-lg" /> {NOME}
+          <img src={logo} alt="" className="h-8 w-auto rounded-lg" /> {NOME}
         </a>
         <nav aria-label="Menu principal" className="hidden items-center gap-6 sm:flex">
           {NAV_LINKS.map(({ href, label }) => (
@@ -114,7 +115,7 @@ function Index() {
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-semibold text-primary shadow-sm">
           <Clock className="h-4 w-4" /> Atendimento de seg a sáb
         </span>
-        <img src={logoAsset.url} alt={`Logo ${NOME}`} className="mx-auto mt-6 h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]" />
+        <img src={logo} alt={`Logo ${NOME}`} className="mx-auto mt-6 h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]" />
         <p className="mx-auto mt-8 max-w-md font-display text-2xl font-semibold text-primary sm:text-3xl">Sua roupa do jeitinho certo</p>
         <p className="mx-auto mt-3 max-w-md text-lg text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
@@ -164,7 +165,7 @@ function Index() {
           <WaButton>Enviar mensagem</WaButton>
           <a href={INSTA} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground px-6 py-3 font-bold transition hover:bg-primary-foreground hover:text-primary">
-            <Instagram className="h-5 w-5" /> Instagram
+            <InstagramIcon className="h-5 w-5" /> Instagram
           </a>
         </div>
         <p className="mt-12 text-sm opacity-75">© {NOME} · Nova Iguaçu - RJ</p>
@@ -172,7 +173,7 @@ function Index() {
 
       <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
         className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-xl transition hover:scale-110">
-        <MessageCircle className="h-7 w-7" />
+        <WhatsAppIcon className="h-7 w-7" />
       </a>
     </main>
   );
