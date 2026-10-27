@@ -19,6 +19,8 @@ import { InstagramIcon, WhatsAppIcon } from "@/components/brand-icons";
 import logo from "@/assets/logo-ms-costuras.webp";
 import logoNav from "@/assets/logo-ms-costuras-nav.webp";
 
+// shortcut: domínio de produção desconhecido, preencher com a URL do site (ex.: https://seu-dominio.com.br) para a prévia do WhatsApp funcionar
+const SITE_URL = "";
 const NOME = "Ms Costuras";
 const WHATS = "5521973250376";
 const MSG = encodeURIComponent("Olá! Vim pelo site e gostaria de fazer um orçamento de costura.");
@@ -26,6 +28,10 @@ const WA = `https://wa.me/${WHATS}?text=${MSG}`;
 const INSTA = "https://instagram.com/ms_costuras65";
 const MAPA =
   "https://www.google.com/maps?q=Avenida+Recife,+20,+Nova+Igua%C3%A7u,+Rio+de+Janeiro&output=embed";
+
+const OG_TITULO = `${NOME} — Costura em Nova Iguaçu`;
+const OG_DESC = "Ajustes de roupa com preço justo e rapidez. Chame no WhatsApp!";
+const OG_IMAGEM = `${SITE_URL}/og-image.png`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,13 +42,20 @@ export const Route = createFileRoute("/")({
         content:
           "Ajustes, bainhas, troca de zíper e pences em Nova Iguaçu - RJ. Preço justo, rapidez e confiança.",
       },
-      { property: "og:title", content: `${NOME} — Costura em Nova Iguaçu` },
-      {
-        property: "og:description",
-        content: "Ajustes de roupa com preço justo e rapidez. Chame no WhatsApp!",
-      },
+      { property: "og:title", content: OG_TITULO },
+      { property: "og:description", content: OG_DESC },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: OG_IMAGEM },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: `Logo ${NOME}` },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:site_name", content: NOME },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: OG_TITULO },
+      { name: "twitter:description", content: OG_DESC },
+      { name: "twitter:image", content: OG_IMAGEM },
     ],
   }),
   component: Index,
