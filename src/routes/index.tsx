@@ -117,7 +117,7 @@ function Index() {
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
       </section>
 
-      <section id="servicos" className="mx-auto max-w-4xl px-5 py-16">
+      <section id="servicos" className="mx-auto max-w-4xl scroll-mt-16 px-5 py-16">
         <Titulo>Serviços e preços</Titulo>
         <ul className="grid gap-4 sm:grid-cols-2">
           {servicos.map(({ nome, preco, icon: I }) => (
@@ -130,7 +130,7 @@ function Index() {
         </ul>
       </section>
 
-      <section id="diferenciais" className="bg-muted px-5 py-16">
+      <section id="diferenciais" className="scroll-mt-16 bg-muted px-5 py-16">
         <Titulo>Nossos diferenciais</Titulo>
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
           {difs.map(({ t, d, icon: I }) => (
@@ -143,7 +143,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="horario" className="mx-auto max-w-4xl px-5 py-16">
+      <section id="horario" className="mx-auto max-w-4xl scroll-mt-16 px-5 py-16">
         <Titulo>Horário e localização</Titulo>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-4 rounded-2xl border bg-card p-6">
@@ -154,7 +154,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="contato" className="bg-primary px-5 py-16 text-center text-primary-foreground">
+      <section id="contato" className="scroll-mt-16 bg-primary px-5 py-16 text-center text-primary-foreground">
         <h2 className="text-3xl font-semibold">Fale com a gente</h2>
         <p className="mt-2 opacity-90">Mande uma mensagem e faça seu orçamento.</p>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
