@@ -110,9 +110,9 @@ function Index() {
     <main className="overflow-x-hidden">
       <Navbar />
       <section id="inicio" className="bg-secondary px-5 pb-16 pt-32 text-center">
-        <img src={logoAsset.url} alt={`Logo ${NOME}`} className="mx-auto w-64 max-w-full rounded-3xl shadow-xl" />
-        <h1 className="mt-6 text-4xl font-semibold text-primary sm:text-5xl">{NOME}</h1>
-        <p className="mx-auto mt-3 max-w-md text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
+        <h1 className="sr-only">{NOME} — Costura e ajustes em Nova Iguaçu - RJ</h1>
+        <img src={logoAsset.url} alt={`Logo ${NOME}`} className="mx-auto h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]" />
+        <p className="mx-auto mt-8 max-w-md text-lg text-muted-foreground">Costura e ajustes com carinho em Nova Iguaçu - RJ</p>
         <div className="mt-8"><WaButton>Chamar no WhatsApp</WaButton></div>
       </section>
 
