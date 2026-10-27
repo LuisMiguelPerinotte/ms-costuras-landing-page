@@ -103,6 +103,16 @@ button:focus-visible {
   box-shadow: 0 0 0 3px var(--ring-gap);
 }
 
+/* Costura dos títulos: sem JS (ou antes da hidratação) a linha já aparece completa. */
+[data-costura] path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2.4s cubic-bezier(0.45, 0, 0.25, 1);
+}
+.reveal-ready [data-costura]:not(.is-visible) path {
+  stroke-dashoffset: 100;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, ::before, ::after {

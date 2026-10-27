@@ -16,6 +16,7 @@ import {
   WandSparkles,
 } from "lucide-react";
 import { InstagramIcon, WhatsAppIcon } from "@/components/brand-icons";
+import { useReveal } from "@/hooks/use-reveal";
 import logo from "@/assets/logo-ms-costuras.webp";
 import logoNav from "@/assets/logo-ms-costuras-nav.webp";
 
@@ -117,9 +118,21 @@ function BotaoCostura({ n }: { n: number }) {
 function Titulo({ children, claro }: { children: React.ReactNode; claro?: boolean }) {
   return (
     <h2
-      className={`mb-8 text-3xl font-semibold after:mt-3 after:block after:w-14 after:border-b-2 after:border-dashed after:border-current after:opacity-50 after:content-[''] ${claro ? "text-wine-foreground" : "text-primary"}`}
+      data-costura
+      className={`mb-8 text-3xl font-semibold ${claro ? "text-wine-foreground" : "text-primary"}`}
     >
       {children}
+      <svg
+        viewBox="0 0 56 4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        aria-hidden="true"
+        className="mt-3 block h-1 w-14 opacity-60"
+      >
+        <path pathLength="100" d="M2 2h6m5 0h6m5 0h6m5 0h6m5 0h6" />
+      </svg>
     </h2>
   );
 }
@@ -208,6 +221,7 @@ function Navbar() {
 }
 
 function Index() {
+  useReveal();
   return (
     <div className="overflow-x-hidden">
       <Navbar />
