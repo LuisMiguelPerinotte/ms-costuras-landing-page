@@ -126,8 +126,9 @@ function Navbar() {
 
 function Index() {
   return (
-    <main className="overflow-x-hidden">
+    <div className="overflow-x-hidden">
       <Navbar />
+      <main>
       <section id="inicio" className="fabric-texture relative overflow-hidden px-5 pb-16 pt-28 text-center">
         <h1 className="sr-only">{NOME} — Costura e ajustes em Nova Iguaçu - RJ</h1>
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-semibold text-primary shadow-sm">
@@ -198,13 +199,50 @@ function Index() {
             <InstagramIcon className="h-5 w-5" /> Instagram
           </a>
         </div>
-        <p className="mt-12 text-sm opacity-75">© {NOME} · Nova Iguaçu - RJ</p>
       </section>
+
+      </main>
+
+      <footer className="on-dark bg-wine px-5 pb-24 pt-14 text-wine-foreground sm:pb-14">
+        <div className="mx-auto max-w-4xl">
+          <div className="grid gap-10 md:grid-cols-3">
+            <div>
+              <p className="flex items-center gap-3 font-display text-2xl font-semibold">
+                <img src={logoNav} alt="" width={93} height={64} loading="lazy" decoding="async" className="h-10 w-auto rounded-lg" /> {NOME}
+              </p>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold">Endereço</h2>
+              <address className="mt-2 not-italic text-wine-muted">Avenida Recife, 20 — Nova Iguaçu - RJ</address>
+              <h2 className="mt-6 text-lg font-semibold">Horário</h2>
+              <p className="mt-2 text-wine-muted"><b className="font-semibold text-wine-foreground">Segunda a sábado</b><br />9h às 12h e 14h às 17h</p>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold">Redes</h2>
+              <ul className="mt-2">
+                <li>
+                  <a href={INSTA} target="_blank" rel="noopener noreferrer" aria-label="Instagram @ms_costuras65, abre em nova aba"
+                    className="flex min-h-11 items-center gap-2 rounded-lg text-wine-muted underline-offset-4 transition hover:text-wine-foreground hover:underline">
+                    <InstagramIcon className="h-5 w-5" /> @ms_costuras65
+                  </a>
+                </li>
+                <li>
+                  <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp, abre em nova aba"
+                    className="flex min-h-11 items-center gap-2 rounded-lg text-wine-muted underline-offset-4 transition hover:text-wine-foreground hover:underline">
+                    <WhatsAppIcon className="h-5 w-5" /> Chamar no WhatsApp
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-10 border-t-2 border-dashed border-wine-muted/30 pt-6 text-sm text-wine-muted">© {NOME} · Nova Iguaçu - RJ</p>
+        </div>
+      </footer>
 
       <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
         className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-xl transition motion-safe:hover:scale-110">
         <WhatsAppIcon className="h-7 w-7" />
       </a>
-    </main>
+    </div>
   );
 }

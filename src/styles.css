@@ -79,11 +79,10 @@
 /* Fita métrica: marcas a cada 8px, mais altas a cada 40px. */
 @utility fita-metrica {
   background-image:
-    repeating-linear-gradient(90deg, var(--stitch) 0 2px, transparent 2px 40px),
-    repeating-linear-gradient(90deg, var(--stitch) 0 1px, transparent 1px 8px);
-  background-size: 100% 100%, 100% 55%;
-  background-position: 0 0, 0 0;
-  background-repeat: no-repeat, no-repeat;
+    linear-gradient(90deg, var(--stitch) 2px, transparent 2px),
+    linear-gradient(90deg, var(--stitch) 1px, transparent 1px);
+  background-size: 40px 100%, 8px 55%;
+  background-repeat: repeat-x;
 }
 
 @utility fabric-texture {
