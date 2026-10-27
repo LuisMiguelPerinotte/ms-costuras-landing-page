@@ -329,7 +329,7 @@ function Index() {
 
         <section
           id="contato"
-          className="on-dark scroll-mt-16 bg-primary px-5 py-16 text-primary-foreground"
+          className="on-dark scroll-mt-16 bg-wine px-5 py-16 text-wine-foreground"
         >
           <div className="mx-auto max-w-4xl">
             <Titulo claro>Fale com a gente</Titulo>
@@ -340,7 +340,7 @@ function Index() {
                 href={INSTA}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-primary-foreground px-6 py-3 font-bold transition hover:bg-primary-foreground hover:text-primary"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-wine-foreground px-6 py-3 font-bold transition hover:bg-wine-foreground hover:text-wine"
               >
                 <InstagramIcon className="h-5 w-5" /> Instagram
               </a>
@@ -349,8 +349,8 @@ function Index() {
         </section>
       </main>
 
-      <footer className="on-dark bg-wine px-5 pb-24 pt-14 text-wine-foreground sm:pb-14">
-        <div className="mx-auto max-w-4xl">
+      <footer className="on-dark bg-wine px-5 pb-24 text-wine-foreground sm:pb-14">
+        <div className="mx-auto max-w-4xl border-t-2 border-dashed border-wine-muted/40 pt-14">
           <div className="grid gap-10 md:grid-cols-3">
             <div>
               <p className="flex items-center gap-3 font-display text-2xl font-semibold">
