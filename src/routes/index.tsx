@@ -293,34 +293,35 @@ function Index() {
         <section id="horario" className="scroll-mt-16 bg-linen px-5 py-16">
           <div className="mx-auto max-w-4xl">
             <Titulo>Horário e localização</Titulo>
-            <div className="flex flex-col md:flex-row md:items-center">
-              <div className="stitch relative z-10 flex flex-col gap-4 rounded-2xl bg-card p-6 pb-9 shadow-sm md:w-72 md:shrink-0 md:pb-6 md:pr-9">
+            <div className="grid gap-8 md:grid-cols-2 md:gap-10">
+              <div className="stitch relative flex flex-col justify-center gap-6 rounded-2xl bg-card p-5 pb-10 shadow-sm md:p-8 md:pr-12">
                 <span
                   aria-hidden="true"
                   className="absolute bottom-3 left-1/2 h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-stitch bg-linen md:bottom-auto md:left-auto md:right-3 md:top-1/2 md:-translate-y-1/2 md:translate-x-0"
                 />
-                <p className="flex gap-3">
-                  <Clock className="h-6 w-6 shrink-0 text-primary" />
+                <span
+                  aria-hidden="true"
+                  className="absolute left-1/2 top-full h-8 -translate-x-1/2 border-l-2 border-dashed border-stitch md:left-full md:top-1/2 md:h-0 md:w-10 md:-translate-y-1/2 md:translate-x-0 md:border-l-0 md:border-t-2"
+                />
+                <p className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-4">
+                  <Clock className="h-9 w-9 shrink-0 text-primary md:h-10 md:w-10" />
                   <span>
-                    <b>Segunda a sábado</b>
-                    <br />
-                    9h às 12h e 14h às 17h
+                    <b className="block font-display text-2xl font-semibold text-primary md:text-3xl">
+                      Segunda a sábado
+                    </b>
+                    <span className="mt-1 block text-xl font-semibold">9h às 12h e 14h às 17h</span>
                   </span>
                 </p>
-                <p className="flex gap-3">
-                  <MapPin className="h-6 w-6 shrink-0 text-primary" />
-                  <span>Nova Iguaçu - RJ</span>
+                <p className="flex items-center gap-4">
+                  <MapPin className="h-9 w-9 shrink-0 text-primary md:h-10 md:w-10" />
+                  <span className="text-lg">Nova Iguaçu - RJ</span>
                 </p>
               </div>
-              <span
-                aria-hidden="true"
-                className="mx-auto h-8 border-l-2 border-dashed border-stitch md:mx-0 md:h-0 md:w-10 md:border-l-0 md:border-t-2"
-              />
               <iframe
                 title="Mapa"
                 src={MAPA}
                 loading="lazy"
-                className="stitch h-72 w-full rounded-2xl bg-card shadow-sm md:h-96 md:flex-1"
+                className="stitch h-80 w-full rounded-2xl bg-card shadow-sm md:h-auto md:min-h-[24rem]"
               />
             </div>
           </div>
