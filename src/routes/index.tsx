@@ -44,7 +44,7 @@ const difs = [
 function WaButton({ children }: { children: React.ReactNode }) {
   return (
     <a href={WA} target="_blank" rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-bold text-whatsapp-foreground shadow-lg transition motion-safe:hover:scale-105">
+      className="inline-flex items-center gap-2 rounded-full border-2 border-whatsapp-foreground bg-whatsapp px-6 py-3 font-bold text-whatsapp-foreground shadow-lg transition motion-safe:hover:scale-105">
       <WhatsAppIcon className="h-5 w-5" /> {children}
     </a>
   );
@@ -189,18 +189,19 @@ function Index() {
         </div>
       </section>
 
-      <section id="contato" className="scroll-mt-16 bg-primary px-5 py-16 text-center text-primary-foreground">
-        <h2 className="text-3xl font-semibold">Fale com a gente</h2>
-        <p className="mt-2 opacity-90">Mande uma mensagem e faça seu orçamento.</p>
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <WaButton>Enviar mensagem</WaButton>
-          <a href={INSTA} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground px-6 py-3 font-bold transition hover:bg-primary-foreground hover:text-primary">
-            <InstagramIcon className="h-5 w-5" /> Instagram
-          </a>
+      <section id="contato" className="on-dark scroll-mt-16 bg-primary px-5 py-16 text-primary-foreground">
+        <div className="mx-auto max-w-4xl">
+          <Titulo claro>Fale com a gente</Titulo>
+          <p className="max-w-md text-lg">Mande uma mensagem e faça seu orçamento.</p>
+          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
+            <WaButton>Enviar mensagem</WaButton>
+            <a href={INSTA} target="_blank" rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center gap-2 rounded-full border-2 border-primary-foreground px-6 py-3 font-bold transition hover:bg-primary-foreground hover:text-primary">
+              <InstagramIcon className="h-5 w-5" /> Instagram
+            </a>
+          </div>
         </div>
       </section>
-
       </main>
 
       <footer className="on-dark bg-wine px-5 pb-24 pt-14 text-wine-foreground sm:pb-14">
@@ -240,7 +241,7 @@ function Index() {
       </footer>
 
       <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-xl transition motion-safe:hover:scale-110">
+        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full border-2 border-whatsapp-foreground bg-whatsapp text-whatsapp-foreground shadow-xl transition motion-safe:hover:scale-110">
         <WhatsAppIcon className="h-7 w-7" />
       </a>
     </div>
