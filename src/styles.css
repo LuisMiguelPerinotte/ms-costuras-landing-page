@@ -20,6 +20,11 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-linen: var(--linen);
+  --color-wine: var(--wine);
+  --color-wine-foreground: var(--wine-foreground);
+  --color-wine-muted: var(--wine-muted);
+  --color-stitch: var(--stitch);
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-border: var(--border);
@@ -30,19 +35,26 @@
   --radius: 1rem;
   --background: oklch(0.985 0.012 350);
   --foreground: oklch(0.28 0.06 355);
-  --card: oklch(1 0 0);
+  /* papel de molde, no lugar do branco puro */
+  --card: oklch(0.966 0.012 358);
   --card-foreground: oklch(0.28 0.06 355);
   --primary: oklch(0.5 0.17 358);
   --primary-foreground: oklch(0.99 0.01 350);
   --secondary: oklch(0.94 0.035 352);
   --secondary-foreground: oklch(0.4 0.13 358);
-  --muted: oklch(0.96 0.02 350);
+  --muted: oklch(0.94 0.02 355);
   --muted-foreground: oklch(0.5 0.05 355);
   --accent: oklch(0.88 0.07 355);
   --accent-foreground: oklch(0.35 0.12 358);
   --whatsapp: oklch(0.51 0.123 153.3);
   --whatsapp-foreground: oklch(1 0 0);
   --border: oklch(0.9 0.035 352);
+  /* ritmo de fundos: background > linen > wine > primary > wine */
+  --linen: oklch(0.909 0.031 357);
+  --wine: oklch(0.284 0.094 352.7);
+  --wine-foreground: oklch(0.97 0.012 350);
+  --wine-muted: oklch(0.88 0.04 352);
+  --stitch: oklch(0.7 0.1 357);
   --ring: oklch(0.5 0.17 358);
   --ring-gap: var(--background);
 }
@@ -61,7 +73,7 @@
 }
 
 @utility stitch {
-  border: 2px dashed var(--color-accent);
+  border: 2px dashed var(--color-stitch);
 }
 
 @utility fabric-texture {

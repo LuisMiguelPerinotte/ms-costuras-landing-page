@@ -50,8 +50,12 @@ function WaButton({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Titulo({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-8 text-center text-3xl font-semibold text-primary">{children}</h2>;
+function Titulo({ children, claro }: { children: React.ReactNode; claro?: boolean }) {
+  return (
+    <h2 className={`mb-8 text-3xl font-semibold after:mt-3 after:block after:w-14 after:border-b-2 after:border-dashed after:border-current after:opacity-50 after:content-[''] ${claro ? "text-wine-foreground" : "text-primary"}`}>
+      {children}
+    </h2>
+  );
 }
 
 const NAV_LINKS = [
@@ -148,9 +152,10 @@ function Index() {
         </ul>
       </section>
 
-      <section id="diferenciais" className="scroll-mt-16 bg-muted px-5 py-16">
-        <Titulo>Nossos diferenciais</Titulo>
-        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
+      <section id="diferenciais" className="scroll-mt-16 bg-wine px-5 py-16 text-wine-foreground">
+       <div className="mx-auto max-w-4xl">
+        <Titulo claro>Nossos diferenciais</Titulo>
+        <div className="grid gap-4 sm:grid-cols-3">
           {difs.map(({ t, d, icon: I }) => (
             <div key={t} className="stitch rounded-2xl bg-card p-6 text-center">
               <I className="mx-auto h-10 w-10 text-primary" />
@@ -159,9 +164,11 @@ function Index() {
             </div>
           ))}
         </div>
+       </div>
       </section>
 
-      <section id="horario" className="mx-auto max-w-4xl scroll-mt-16 px-5 py-16">
+      <section id="horario" className="scroll-mt-16 bg-linen px-5 py-16">
+       <div className="mx-auto max-w-4xl">
         <Titulo>Horário e localização</Titulo>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-4 rounded-2xl border bg-card p-6">
@@ -170,6 +177,7 @@ function Index() {
           </div>
           <iframe title="Mapa" src={MAPA} loading="lazy" className="h-64 w-full rounded-2xl border md:h-full" />
         </div>
+       </div>
       </section>
 
       <section id="contato" className="scroll-mt-16 bg-primary px-5 py-16 text-center text-primary-foreground">
