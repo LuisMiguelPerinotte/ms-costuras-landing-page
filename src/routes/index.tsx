@@ -141,15 +141,19 @@ function Index() {
 
       <section id="servicos" className="mx-auto max-w-4xl scroll-mt-16 px-5 py-16">
         <Titulo>Serviços e preços</Titulo>
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {servicos.map(({ nome, preco, icon: I }) => (
-            <li key={nome} className="flex items-center gap-4 rounded-2xl border bg-card p-4">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-primary"><I className="h-6 w-6" /></span>
-              <span className="min-w-0 flex-1 font-semibold">{nome}</span>
-              <span className="shrink-0 font-bold text-primary">{preco}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="stitch overflow-hidden rounded-2xl bg-card shadow-sm">
+          <div aria-hidden="true" className="fita-metrica h-4 border-b border-border" />
+          <ul className="px-4 py-3 sm:px-8 sm:py-5">
+            {servicos.map(({ nome, preco, icon: I }) => (
+              <li key={nome} className="flex items-end gap-2 py-3 sm:gap-3">
+                <I aria-hidden="true" className="mb-1 h-5 w-5 shrink-0 text-primary" />
+                <span className="min-w-0 font-semibold sm:text-lg">{nome}</span>
+                <span aria-hidden="true" className="mb-2 min-w-4 flex-1 border-b-2 border-dashed border-stitch" />
+                <span className="shrink-0 font-display text-2xl font-semibold leading-none text-primary sm:text-3xl">{preco}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section id="diferenciais" className="scroll-mt-16 bg-wine px-5 py-16 text-wine-foreground">
