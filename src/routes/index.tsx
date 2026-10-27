@@ -262,7 +262,10 @@ function Index() {
               <div aria-hidden="true" className="fita-metrica h-4 border-b border-border" />
               <ul className="px-4 py-3 sm:px-8 sm:py-5">
                 {servicos.map(({ nome, preco, icon: I }) => (
-                  <li key={nome} className="flex items-baseline gap-2 py-3 sm:gap-3">
+                  <li
+                    key={nome}
+                    className="-mx-3 flex items-baseline gap-2 rounded-xl px-3 py-3 transition-colors duration-200 hover:bg-secondary/60 sm:gap-3"
+                  >
                     <I aria-hidden="true" className="h-5 w-5 shrink-0 self-center text-primary" />
                     <span className="min-w-0 font-semibold sm:text-lg">{nome}</span>
                     <span
