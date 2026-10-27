@@ -63,6 +63,8 @@ const difs = [
   { t: "Confiabilidade", d: "Cuidado com cada detalhe.", icon: ShieldCheck },
 ];
 
+const passos = ["Traga a peça", "Combine o ajuste", "Retire na loja"];
+
 function WaButton({ children }: { children: React.ReactNode }) {
   return (
     <a
@@ -73,6 +75,29 @@ function WaButton({ children }: { children: React.ReactNode }) {
     >
       <WhatsAppIcon className="h-5 w-5" /> {children}
     </a>
+  );
+}
+
+// Botão de costura: aro, quatro furinhos e o número como texto real.
+function BotaoCostura({ n }: { n: number }) {
+  return (
+    <span className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full bg-linen font-display text-2xl font-semibold leading-none text-primary">
+      <svg
+        viewBox="0 0 56 56"
+        fill="none"
+        stroke="currentColor"
+        aria-hidden="true"
+        className="absolute inset-0"
+      >
+        <circle cx="28" cy="28" r="26" strokeWidth="2" />
+        <circle cx="28" cy="28" r="21" strokeWidth="1.5" opacity=".5" />
+        <circle cx="16" cy="16" r="2.5" strokeWidth="1.5" />
+        <circle cx="40" cy="16" r="2.5" strokeWidth="1.5" />
+        <circle cx="16" cy="40" r="2.5" strokeWidth="1.5" />
+        <circle cx="40" cy="40" r="2.5" strokeWidth="1.5" />
+      </svg>
+      {n}
+    </span>
   );
 }
 
@@ -224,6 +249,23 @@ function Index() {
                 ))}
               </ul>
             </div>
+          </div>
+        </section>
+
+        <section id="como-funciona" className="scroll-mt-16 bg-linen px-5 py-16">
+          <div className="mx-auto max-w-4xl">
+            <Titulo>Como funciona</Titulo>
+            <ol className="md:grid md:grid-cols-3">
+              {passos.map((passo, i) => (
+                <li
+                  key={passo}
+                  className="relative flex items-center gap-5 pb-10 last:pb-0 md:flex-col md:gap-4 md:pb-0 md:text-center not-last:before:absolute not-last:before:left-7 not-last:before:top-7 not-last:before:h-full not-last:before:border-l-2 not-last:before:border-dashed not-last:before:border-stitch not-last:before:content-[''] md:not-last:before:left-1/2 md:not-last:before:h-0 md:not-last:before:w-full md:not-last:before:border-l-0 md:not-last:before:border-t-2"
+                >
+                  <BotaoCostura n={i + 1} />
+                  <h3 className="text-xl font-semibold">{passo}</h3>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
