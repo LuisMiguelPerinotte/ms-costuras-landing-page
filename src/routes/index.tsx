@@ -126,7 +126,7 @@ function Navbar() {
             <a
               key={href}
               href={href}
-              className="flex min-h-11 items-center rounded-lg px-3 text-sm font-medium text-muted-foreground transition hover:text-primary"
+              className="flex min-h-11 items-center rounded-lg px-3 font-medium text-muted-foreground transition hover:text-primary"
             >
               {label}
             </a>
@@ -179,7 +179,7 @@ function Index() {
           className="fabric-texture relative overflow-hidden px-5 pb-16 pt-28 text-center"
         >
           <h1 className="sr-only">{NOME} — Costura e ajustes em Nova Iguaçu - RJ</h1>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-semibold text-primary shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 font-semibold text-primary shadow-sm">
             <Clock className="h-4 w-4" /> Atendimento de seg a sáb
           </span>
           <img
@@ -217,7 +217,7 @@ function Index() {
                       aria-hidden="true"
                       className="min-w-4 flex-1 border-b-2 border-dashed border-stitch"
                     />
-                    <span className="shrink-0 font-display text-2xl font-semibold leading-none text-primary sm:text-3xl">
+                    <span className="shrink-0 font-display text-xl font-semibold leading-none text-primary sm:text-3xl">
                       {preco}
                     </span>
                   </li>
@@ -241,7 +241,7 @@ function Index() {
                 >
                   <I aria-hidden="true" className="h-9 w-9 text-linen" />
                   <h3 className="mt-3 text-xl font-semibold">{t}</h3>
-                  <p className="mt-1 text-wine-muted">{d}</p>
+                  <p className="mt-1 text-lg text-wine-muted">{d}</p>
                 </li>
               ))}
             </ul>
@@ -325,11 +325,11 @@ function Index() {
             </div>
             <div>
               <h2 className="text-lg font-semibold">Endereço</h2>
-              <address className="mt-2 not-italic text-wine-muted">
+              <address className="mt-2 text-lg not-italic text-wine-muted">
                 Avenida Recife, 20 — Nova Iguaçu - RJ
               </address>
               <h2 className="mt-6 text-lg font-semibold">Horário</h2>
-              <p className="mt-2 text-wine-muted">
+              <p className="mt-2 text-lg text-wine-muted">
                 <b className="font-semibold text-wine-foreground">Segunda a sábado</b>
                 <br />
                 9h às 12h e 14h às 17h
@@ -363,7 +363,7 @@ function Index() {
               </ul>
             </div>
           </div>
-          <p className="mt-10 border-t-2 border-dashed border-wine-muted/30 pt-6 text-sm text-wine-muted">
+          <p className="mt-10 border-t-2 border-dashed border-wine-muted/30 pt-6 text-wine-muted">
             © {NOME} · Nova Iguaçu - RJ
           </p>
         </div>
