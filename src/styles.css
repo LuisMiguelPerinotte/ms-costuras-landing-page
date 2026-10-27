@@ -122,7 +122,7 @@ button:focus-visible {
   transform: translateY(12px);
 }
 
-/* Anel do botão flutuante: 3 pulsos ao carregar a página, só transform/opacity. */
+/* Anel do botão flutuante: 4 pulsos ao carregar a página, só transform/opacity. */
 .pulso-wa::after {
   content: "";
   position: absolute;
