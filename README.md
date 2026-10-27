@@ -1,34 +1,64 @@
-# Linha Rosa Costura Criativa
+# Ms Costuras: Site Institucional
 
-Crie uma landing page responsiva, mobile-first, para um ateliê de costura
+Landing page para a **Ms Costuras**, ateliê de costura e ajustes em Nova Iguaçu - RJ. O site divulga os serviços, preços e horários da loja e leva o cliente direto ao WhatsApp.
 
-em Nova Iguaçu - RJ. Cor principal: rosa escuro. Estilo simples e acolhedor,
+🔗 **Site no ar:** [ms-costuras-two.vercel.app](https://ms-costuras-two.vercel.app/)
 
-com ícones de costura no lugar de fotos.
+## Sobre o projeto
 
-Seções:
+Projeto desenvolvido como **atividade de extensão** do curso de [ADS] da **UNIG - Universidade Iguaçu**, no Tema Integrador "Gestão de Carreiras".
 
-1. Início: logo em destaque, nome da loja e botão "Chamar no WhatsApp"
+A proposta é levar presença digital a pequenos empreendedores da comunidade local, usando ferramentas de desenvolvimento assistido por Inteligência Artificial, versionamento com Git e deploy gratuito.
 
-2. Serviços e preços: troca de zíper R$20, ajuste para apertar R$20,
+## Parceira beneficiada
 
-   bainha R$20, pence R$10, bainha + pence R$30. Outros: sob consulta
+A Ms Costuras é uma loja de costura que atende vizinhos e moradores da região de Nova Iguaçu. Até então, os clientes chegavam apenas por indicação e boca a boca. O site centraliza serviços, preços, horário e localização em um só lugar, facilitando que novos clientes encontrem a loja.
 
-3. Diferenciais: preço justo, rapidez e confiabilidade
+## ODS atendida
 
-4. Horário e localização: seg a sáb, 9h-12h e 14h-17h, com mapa do Google
+**ODS 8 - Trabalho Decente e Crescimento Econômico:** digitalização de uma microempreendedora local, ampliando sua visibilidade e potencial de renda.
 
-5. Contato: WhatsApp com mensagem pronta e link do Instagram
+Relaciona-se também com a **ODS 10 - Redução das Desigualdades**, ao levar tecnologia a quem não teria recursos para contratar um desenvolvimento profissional.
 
-Adicione um botão flutuante de WhatsApp fixo no canto da tela.
+## Funcionalidades
 
-## Development
+- Seção inicial com logo, frase de destaque e botão para o WhatsApp
+- Tabela de serviços com preços fixos (demais serviços sob consulta)
+- Diferenciais da loja: preço justo, rapidez e confiabilidade
+- Horário de atendimento e localização com mapa
+- Contato via WhatsApp e Instagram
+- Botão flutuante de WhatsApp em todas as seções
+- Layout responsivo, pensado primeiro para o celular
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Tecnologias e ferramentas
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+| Ferramenta | Uso |
+| --- | --- |
+| [Lovable](https://lovable.dev) | Geração do site com IA a partir de prompts |
+| React + TypeScript | Base do front-end |
+| Vite | Build e servidor de desenvolvimento |
+| Tailwind CSS | Estilização |
+| Git e GitHub | Versionamento e histórico do projeto |
+| [Vercel/Netlify] | Hospedagem e deploy |
+
+## Como rodar localmente
+
+Pré-requisito: Node.js instalado.
+
+```bash
+git clone https://github.com/LuisMiguelPerinotte/ms-costuras-landing-page.git
+cd ms-costuras-landing-page
+npm install
 npm run dev
 ```
+
+## Próximos passos
+
+- Galeria de trabalhos realizados
+- Sistema de avaliações de clientes, com back-end próprio
+
+## Autor
+
+**Luís Miguel**: [LinkedIn](https://www.linkedin.com/in/luis-miguel-perinotte/) · [GitHub](https://github.com/LuisMiguelPerinotte)
+
+Projeto de extensão orientado pelo professor Hamilcar Silva - UNIG, 2026.
