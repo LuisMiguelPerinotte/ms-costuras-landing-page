@@ -450,7 +450,7 @@ function Index() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp"
-        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full border-2 border-whatsapp-foreground bg-whatsapp text-whatsapp-foreground shadow-xl transition motion-safe:hover:scale-110"
+        className="pulso-wa fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full border-2 border-whatsapp-foreground bg-whatsapp text-whatsapp-foreground shadow-xl transition motion-safe:hover:scale-110"
       >
         <WhatsAppIcon className="h-7 w-7" />
       </a>
