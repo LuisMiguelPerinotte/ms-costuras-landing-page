@@ -79,7 +79,7 @@ export function LogoHero() {
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(var(--d)*0.67)] text-center font-script text-[calc(var(--d)*0.066)] font-normal leading-[1.15] text-logo-frase"
+        className="logo-frase absolute inset-x-0 top-[calc(var(--d)*0.67)] text-center font-script text-[calc(var(--d)*0.066)] font-normal leading-[1.15] text-logo-frase"
       >
         <span className="block whitespace-nowrap">Costurar é mais que ofício,</span>
         <span className="inline-flex items-center gap-[calc(var(--d)*0.01)] whitespace-nowrap">
