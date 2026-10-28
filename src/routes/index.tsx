@@ -23,6 +23,7 @@ import logoNav from "@/assets/logo-ms-costuras-nav.webp";
 // og:image e og:url exigem URL absoluta (prévia do WhatsApp)
 const SITE_URL = "https://ms-costuras-two.vercel.app";
 const NOME = "Ms Costuras";
+const [NOME_MS, NOME_COSTURAS] = NOME.split(" ");
 const WHATS = "5521973250376";
 const MSG = encodeURIComponent("Olá! Vim pelo site e gostaria de fazer um orçamento de costura.");
 const WA = `https://wa.me/${WHATS}?text=${MSG}`;
@@ -170,7 +171,9 @@ function Navbar() {
             decoding="async"
             className="h-8 w-auto"
           />{" "}
-          <span className="font-script text-2xl font-normal">{NOME}</span>
+          <span className="font-script text-2xl font-normal">
+            {NOME_MS} <span className="text-logo-marrom">{NOME_COSTURAS}</span>
+          </span>
         </a>
         <nav aria-label="Menu principal" className="hidden items-center gap-1 sm:flex">
           {NAV_LINKS.map(({ href, label }) => (
