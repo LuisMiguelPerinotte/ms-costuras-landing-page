@@ -24,7 +24,7 @@ export function LogoHero() {
             className="logo-anel-mascara"
             cx="50"
             cy="50"
-            r="40.5"
+            r="45"
             pathLength="100"
             stroke="white"
             strokeWidth="6"
@@ -36,7 +36,7 @@ export function LogoHero() {
         <circle
           cx="50"
           cy="50"
-          r="40.5"
+          r="45"
           pathLength="360"
           className="stroke-logo-anel"
           strokeWidth="0.7"
@@ -79,7 +79,7 @@ export function LogoHero() {
       </div>
       <div
         aria-hidden="true"
-        className="logo-frase absolute inset-x-0 top-[calc(var(--d)*0.67)] text-center font-script text-[calc(var(--d)*0.066)] font-normal leading-[1.15] text-logo-frase"
+        className="logo-frase absolute inset-x-0 top-[calc(var(--d)*0.67)] text-center font-script text-[calc(var(--d)*0.063)] font-normal leading-[1.15] text-logo-frase"
       >
         <span className="block whitespace-nowrap">Costurar é mais que ofício,</span>
         <span className="inline-flex items-center gap-[calc(var(--d)*0.01)] whitespace-nowrap">
