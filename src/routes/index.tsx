@@ -289,7 +289,45 @@ function Index() {
             className="hero-entra mx-auto mt-8 max-w-md font-display text-2xl font-semibold text-primary sm:text-3xl"
             style={{ "--i": 2 } as React.CSSProperties}
           >
-            Sua roupa do jeitinho certo
+            Sua roupa do{" "}
+            <span className="relative inline-block whitespace-nowrap">
+              jeitinho certo
+              {/* Alinhavo sob as duas palavras (7 traços), revelado da esquerda para a direita por máscara: num path só, o dash reiniciaria a cada "m" e os traços surgiriam juntos. Sem non-scaling-stroke (quebra o pathLength no Chrome): o esticão é só no eixo x, então a espessura vertical já fica ≈2px (h-2 = 9px sobre 8 unidades). */}
+              <svg
+                viewBox="0 0 100 8"
+                preserveAspectRatio="none"
+                fill="none"
+                aria-hidden="true"
+                className="absolute inset-x-0 -bottom-1.5 h-2 w-full overflow-visible text-primary"
+              >
+                <mask
+                  id="sublinhado-mascara"
+                  maskUnits="userSpaceOnUse"
+                  x="0"
+                  y="0"
+                  width="100"
+                  height="8"
+                >
+                  <path
+                    className="sublinhado"
+                    pathLength="100"
+                    d="M0 4h100"
+                    stroke="white"
+                    strokeWidth="8"
+                    strokeDasharray="100"
+                    strokeDashoffset="0"
+                  />
+                </mask>
+                <path
+                  pathLength="99.5"
+                  d="M0 4h100"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeDasharray="9.5 5.5"
+                  mask="url(#sublinhado-mascara)"
+                />
+              </svg>
+            </span>
           </p>
           <p
             className="hero-entra mx-auto mt-3 max-w-md text-lg text-muted-foreground"
