@@ -47,17 +47,19 @@ export function LogoHero() {
       </svg>
       <div
         aria-hidden="true"
-        className="absolute left-[calc(var(--d)*0.4)] top-[calc(var(--d)*0.04)] h-[calc(var(--d)*0.21)] w-[calc(var(--d)*0.21)] rounded-full bg-logo-creme"
+        className="logo-carretel absolute left-[calc(var(--d)*0.4)] top-[calc(var(--d)*0.04)] h-[calc(var(--d)*0.21)] w-[calc(var(--d)*0.21)] rounded-full bg-logo-creme"
       >
-        <img
-          src={carretel}
-          alt=""
-          width={240}
-          height={240}
-          loading="eager"
-          decoding="async"
-          className="h-full w-full"
-        />
+        <div className="logo-carretel-oscila h-full w-full">
+          <img
+            src={carretel}
+            alt=""
+            width={240}
+            height={240}
+            loading="eager"
+            decoding="async"
+            className="h-full w-full"
+          />
+        </div>
       </div>
       <div
         aria-hidden="true"
