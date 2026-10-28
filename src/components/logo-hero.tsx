@@ -65,7 +65,7 @@ export function LogoHero() {
         aria-hidden="true"
         className="absolute inset-x-0 top-[calc(var(--d)*0.235)] text-center leading-none"
       >
-        <span className="inline-block whitespace-nowrap font-logo-ms text-[calc(var(--d)*0.28)] font-bold tracking-[0.06em] text-logo-rosa">
+        <span className="logo-ms inline-block whitespace-nowrap font-logo-ms text-[calc(var(--d)*0.28)] font-bold tracking-[0.06em] text-logo-rosa">
           Ms
         </span>
       </div>
@@ -73,7 +73,7 @@ export function LogoHero() {
         aria-hidden="true"
         className="absolute inset-x-0 top-[calc(var(--d)*0.43)] text-center leading-none"
       >
-        <span className="inline-block whitespace-nowrap font-script text-[calc(var(--d)*0.215)] font-normal text-logo-marrom">
+        <span className="logo-costuras inline-block whitespace-nowrap font-script text-[calc(var(--d)*0.215)] font-normal text-logo-marrom">
           Costuras
         </span>
       </div>
