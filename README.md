@@ -97,10 +97,38 @@ Outros comandos:
 - `npm run preview`: visualiza o resultado do build
 - `npm test`: roda os testes
 
+## Testes
+
+```bash
+npm test          # vitest run: roda todos os testes uma vez
+npm run test:watch  # vitest: reexecuta ao salvar
+```
+
+Ambiente: [Vitest](https://vitest.dev) com jsdom e Testing Library (`@testing-library/react` e `jest-dom`). A configuração fica em `vitest.config.ts` e o `src/test/setup.ts` simula `window.scrollTo` e `window.matchMedia`, que o jsdom não implementa. Resultado atual: 2 arquivos e 3 testes, todos passando.
+
+O que é testado:
+
+| Arquivo | O que verifica |
+| --- | --- |
+| `src/test/app-routing.test.tsx` | O roteador reconhece a rota `/` e associa uma página a ela, em vez de cair na rota raiz (página não encontrada). Só a correspondência da rota é checada: nada é renderizado e os loaders não rodam. |
+| `src/test/use-reveal.test.tsx` | O hook `useReveal` marca com `is-visible` os elementos `[data-costura]` e `[data-reveal]` que já estão na tela, observa os demais com `IntersectionObserver`, adiciona `reveal-ready` ao `<html>` e o remove ao desmontar. |
+| `src/test/use-reveal.test.tsx` | Com `prefers-reduced-motion` ativo, o hook não adiciona `reveal-ready` nem observa nenhum elemento. |
+
+O que ainda não é coberto por testes automatizados:
+
+- Renderização e aparência das seções da página
+- Animações CSS (costura, entrada em sequência, pesponto da logo, pulso)
+- Foco e teclado, como o fechamento do menu com Esc
+- Links de WhatsApp e Instagram
+- Meta tags, incluindo Open Graph
+- Responsividade (por exemplo, 360px de largura) e comportamento em navegadores reais
+- Relatório de cobertura: não há provider de cobertura configurado
+
 ## Próximos passos
 
 - Galeria de trabalhos realizados
 - Sistema de avaliações de clientes, com back-end próprio
+- Ampliar a cobertura de testes
 
 ## Autor
 
