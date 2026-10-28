@@ -57,6 +57,7 @@ A página é única e tem estas seções, nesta ordem: início, serviços e pre�
 
 **Animações discretas**
 
+- Logo que "se monta" ao carregar: o pesponto se costura ao redor, o nome surge como se fosse escrito à mão e a frase aparece por último
 - Seções que aparecem suavemente ao rolar a página
 - Linha pontilhada de "costura" desenhada sob os títulos
 - Pulso no botão flutuante do WhatsApp ao carregar a página
