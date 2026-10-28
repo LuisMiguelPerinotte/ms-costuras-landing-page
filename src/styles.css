@@ -147,11 +147,26 @@ button:focus-visible {
   to { opacity: 1; transform: none; }
 }
 
+/* Pesponto da logo: a máscara revela o tracejado (150ms + 1.2s = 1.35s), depois o anel gira lento. */
+.pesponto-mascara {
+  animation: pesponto-costura 1.2s ease-in-out 150ms backwards;
+}
+@keyframes pesponto-costura {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+.pesponto {
+  animation: pesponto-gira 120s linear 1.35s infinite;
+}
+@keyframes pesponto-gira {
+  to { transform: rotate(360deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .pulso-wa::after { animation: none; }
   /* a regra global zera a duração mas não o delay: sem isto o hero ficaria escondido */
-  .hero-entra { animation: none; }
+  .hero-entra, .pesponto, .pesponto-mascara { animation: none; }
   *, ::before, ::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
