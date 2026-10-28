@@ -231,7 +231,10 @@ function Index() {
           className="fabric-texture relative overflow-hidden px-5 pb-16 pt-28 text-center"
         >
           <h1 className="sr-only">{NOME} — Costura e ajustes em Nova Iguaçu - RJ</h1>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 font-semibold text-primary shadow-sm">
+          <span
+            className="hero-entra inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 font-semibold text-primary shadow-sm"
+            style={{ "--i": 0 } as React.CSSProperties}
+          >
             <Clock className="h-4 w-4" /> Atendimento de seg a sáb
           </span>
           <img
@@ -242,15 +245,22 @@ function Index() {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="mx-auto mt-6 h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]"
+            className="hero-entra mx-auto mt-6 h-[200px] w-[200px] rounded-full object-cover shadow-xl sm:h-[280px] sm:w-[280px]"
+            style={{ "--i": 1 } as React.CSSProperties}
           />
-          <p className="mx-auto mt-8 max-w-md font-display text-2xl font-semibold text-primary sm:text-3xl">
+          <p
+            className="hero-entra mx-auto mt-8 max-w-md font-display text-2xl font-semibold text-primary sm:text-3xl"
+            style={{ "--i": 2 } as React.CSSProperties}
+          >
             Sua roupa do jeitinho certo
           </p>
-          <p className="mx-auto mt-3 max-w-md text-lg text-muted-foreground">
+          <p
+            className="hero-entra mx-auto mt-3 max-w-md text-lg text-muted-foreground"
+            style={{ "--i": 3 } as React.CSSProperties}
+          >
             Costura e ajustes com carinho em Nova Iguaçu - RJ
           </p>
-          <div className="mt-8">
+          <div className="hero-entra mt-8" style={{ "--i": 4 } as React.CSSProperties}>
             <WaButton>Chamar no WhatsApp</WaButton>
           </div>
         </section>

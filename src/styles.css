@@ -137,9 +137,21 @@ button:focus-visible {
   to { transform: scale(2); opacity: 0; }
 }
 
+/* Entrada do hero em escada: --i define a ordem (150ms entre itens). Sem `animation` o estado base já é o final. */
+.hero-entra {
+  animation: hero-entra 0.55s ease-out backwards;
+  animation-delay: calc(var(--i, 0) * 150ms);
+}
+@keyframes hero-entra {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .pulso-wa::after { animation: none; }
+  /* a regra global zera a duração mas não o delay: sem isto o hero ficaria escondido */
+  .hero-entra { animation: none; }
   *, ::before, ::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
