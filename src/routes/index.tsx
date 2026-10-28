@@ -245,7 +245,7 @@ function Index() {
             Sua roupa do{" "}
             <span className="relative inline-block whitespace-nowrap">
               jeitinho certo
-              {/* Alinhavo sob as duas palavras (7 traços), revelado da esquerda para a direita por máscara: num path só, o dash reiniciaria a cada "m" e os traços surgiriam juntos. Sem non-scaling-stroke (quebra o pathLength no Chrome): o esticão é só no eixo x, então a espessura vertical já fica ≈2px (h-2 = 9px sobre 8 unidades). */}
+              {/* Alinhavo sob as duas palavras (14 traços), revelado da esquerda para a direita por máscara: num path só, o dash reiniciaria a cada "m" e os traços surgiriam juntos. Sem non-scaling-stroke (quebra o pathLength no Chrome): o esticão é só no eixo x, então a espessura vertical fica ≈1,2px (h-2 = 9px sobre 8 unidades). */}
               <svg
                 viewBox="0 0 100 8"
                 preserveAspectRatio="none"
@@ -272,11 +272,11 @@ function Index() {
                   />
                 </mask>
                 <path
-                  pathLength="99.5"
+                  pathLength="98"
                   d="M0 4h100"
                   stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeDasharray="9.5 5.5"
+                  strokeWidth="1.1"
+                  strokeDasharray="4 3"
                   mask="url(#sublinhado-mascara)"
                 />
               </svg>
