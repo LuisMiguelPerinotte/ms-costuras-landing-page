@@ -155,6 +155,15 @@ button:focus-visible {
   to { opacity: 1; transform: none; }
 }
 
+/* Anel da logo: a máscara costura o tracejado (300ms + 0.7s = 1s) e o anel fica visível no fim. */
+.logo-anel-mascara {
+  animation: logo-anel-costura 0.7s ease-in-out 300ms backwards;
+}
+@keyframes logo-anel-costura {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
 /* Sublinhado da tagline: começa quando o título termina de aparecer (850ms + 0.6s = 1.45s). */
 .sublinhado {
   animation: sublinhado-costura 0.6s ease-out 850ms backwards;
@@ -168,7 +177,7 @@ button:focus-visible {
   html { scroll-behavior: auto; }
   .pulso-wa::after { animation: none; }
   /* a regra global zera a duração mas não o delay: sem isto o hero ficaria escondido */
-  .hero-entra, .sublinhado { animation: none; }
+  .hero-entra, .logo-anel-mascara, .sublinhado { animation: none; }
   *, ::before, ::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;

@@ -18,6 +18,21 @@ export function LogoHero() {
         aria-hidden="true"
         className="absolute inset-0 h-full w-full"
       >
+        {/* Máscara revela o tracejado a partir do topo, no sentido horário (o anel fica no final). */}
+        <mask id="logo-anel-mascara">
+          <circle
+            className="logo-anel-mascara"
+            cx="50"
+            cy="50"
+            r="40.5"
+            pathLength="100"
+            stroke="white"
+            strokeWidth="6"
+            strokeDasharray="100"
+            strokeDashoffset="0"
+            transform="rotate(-90 50 50)"
+          />
+        </mask>
         <circle
           cx="50"
           cy="50"
@@ -27,6 +42,7 @@ export function LogoHero() {
           strokeWidth="0.7"
           strokeDasharray="3.7 2.3"
           strokeLinecap="round"
+          mask="url(#logo-anel-mascara)"
         />
       </svg>
       <div
