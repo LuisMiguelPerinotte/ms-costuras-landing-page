@@ -164,11 +164,11 @@ function Navbar() {
           <img
             src={logoNav}
             alt=""
-            width={93}
-            height={64}
+            width={96}
+            height={96}
             loading="eager"
             decoding="async"
-            className="h-8 w-auto rounded-lg"
+            className="h-8 w-auto"
           />{" "}
           <span className="font-script text-2xl font-normal">{NOME}</span>
         </a>
