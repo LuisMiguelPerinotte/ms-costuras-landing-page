@@ -9,6 +9,7 @@
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Nunito", system-ui, sans-serif;
   --font-script: "Kaushan Script", "Brush Script MT", cursive;
+  --font-logo-ms: "Dancing Script", "Brush Script MT", cursive;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -30,6 +31,12 @@
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  /* cores da logo recriada em camadas (LogoHero) */
+  --color-logo-creme: #faf6ea;
+  --color-logo-rosa: #c66678;
+  --color-logo-marrom: #4e241e;
+  --color-logo-anel: #935b60;
+  --color-logo-frase: #3c1e18;
 }
 
 :root {
@@ -148,23 +155,6 @@ button:focus-visible {
   to { opacity: 1; transform: none; }
 }
 
-/* Pesponto da logo: a máscara revela o tracejado (150ms + 1.2s = 1.35s); depois o anel some num fade de 400ms (até 1.75s). */
-.pesponto-mascara {
-  animation: pesponto-costura 1.2s ease-in-out 150ms backwards;
-}
-@keyframes pesponto-costura {
-  from { stroke-dashoffset: 100; }
-  to { stroke-dashoffset: 0; }
-}
-.pesponto {
-  animation: pesponto-some 0.4s ease-out 1.35s forwards;
-}
-/* parte da opacidade do estado base (opacity-85), para não dar salto */
-@keyframes pesponto-some {
-  from { opacity: 0.85; visibility: visible; }
-  to { opacity: 0; visibility: hidden; }
-}
-
 /* Sublinhado da tagline: começa quando o título termina de aparecer (850ms + 0.6s = 1.45s). */
 .sublinhado {
   animation: sublinhado-costura 0.6s ease-out 850ms backwards;
@@ -178,9 +168,7 @@ button:focus-visible {
   html { scroll-behavior: auto; }
   .pulso-wa::after { animation: none; }
   /* a regra global zera a duração mas não o delay: sem isto o hero ficaria escondido */
-  .hero-entra, .pesponto-mascara, .sublinhado { animation: none; }
-  /* sem movimento não há costura para mostrar: o anel nem aparece */
-  .pesponto { display: none; }
+  .hero-entra, .sublinhado { animation: none; }
   *, ::before, ::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;

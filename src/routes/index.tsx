@@ -16,8 +16,8 @@ import {
   WandSparkles,
 } from "lucide-react";
 import { InstagramIcon, WhatsAppIcon } from "@/components/brand-icons";
+import { LogoHero } from "@/components/logo-hero";
 import { useReveal } from "@/hooks/use-reveal";
-import logo from "@/assets/logo-ms-costuras.webp";
 import logoNav from "@/assets/logo-ms-costuras-nav.webp";
 
 // og:image e og:url exigem URL absoluta (prévia do WhatsApp)
@@ -237,54 +237,7 @@ function Index() {
           >
             <Clock className="h-4 w-4" /> Atendimento de seg a sáb
           </span>
-          <div
-            className="hero-entra relative mx-auto mt-6 h-[200px] w-[200px] sm:h-[280px] sm:w-[280px]"
-            style={{ "--i": 1 } as React.CSSProperties}
-          >
-            <img
-              src={logo}
-              alt={`Logo ${NOME}`}
-              width={560}
-              height={560}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="h-full w-full rounded-full object-cover shadow-xl"
-            />
-            {/* Pesponto em volta da logo: 36 pontos que a máscara revela no sentido horário e depois o anel some. */}
-            <svg
-              viewBox="0 0 100 100"
-              fill="none"
-              aria-hidden="true"
-              className="pesponto absolute -inset-3 overflow-visible text-primary opacity-85 sm:-inset-4"
-            >
-              <mask id="pesponto-mascara">
-                <circle
-                  className="pesponto-mascara"
-                  cx="50"
-                  cy="50"
-                  r="47.5"
-                  pathLength="100"
-                  stroke="white"
-                  strokeWidth="6"
-                  strokeDasharray="100"
-                  strokeDashoffset="0"
-                  transform="rotate(-90 50 50)"
-                />
-              </mask>
-              <circle
-                className="stroke-[0.9] sm:stroke-[0.65]"
-                cx="50"
-                cy="50"
-                r="47.5"
-                pathLength="360"
-                stroke="currentColor"
-                strokeDasharray="6 4"
-                strokeLinecap="round"
-                mask="url(#pesponto-mascara)"
-              />
-            </svg>
-          </div>
+          <LogoHero />
           <p
             className="hero-entra mx-auto mt-8 max-w-md font-display text-2xl font-semibold text-primary sm:text-3xl"
             style={{ "--i": 2 } as React.CSSProperties}
