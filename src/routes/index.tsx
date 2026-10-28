@@ -160,7 +160,7 @@ function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-5">
-        <a href="#inicio" className="flex min-h-11 items-center gap-2 font-semibold text-primary">
+        <a href="#inicio" className="flex min-h-11 items-center gap-2 text-primary">
           <img
             src={logoNav}
             alt=""
@@ -170,7 +170,7 @@ function Navbar() {
             decoding="async"
             className="h-8 w-auto rounded-lg"
           />{" "}
-          {NOME}
+          <span className="font-script text-2xl font-normal">{NOME}</span>
         </a>
         <nav aria-label="Menu principal" className="hidden items-center gap-1 sm:flex">
           {NAV_LINKS.map(({ href, label }) => (
