@@ -251,7 +251,7 @@ function Index() {
               decoding="async"
               className="h-full w-full rounded-full object-cover shadow-xl"
             />
-            {/* Pesponto em volta da logo: 36 pontos que a máscara revela no sentido horário e depois giram devagar. */}
+            {/* Pesponto em volta da logo: 36 pontos que a máscara revela no sentido horário e depois o anel some. */}
             <svg
               viewBox="0 0 100 100"
               fill="none"
