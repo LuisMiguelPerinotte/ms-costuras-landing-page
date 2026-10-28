@@ -4,6 +4,13 @@ Landing page para a **Ms Costuras**, ateliê de costura e ajustes em Nova Iguaç
 
 🔗 **Site no ar:** [ms-costuras-two.vercel.app](https://ms-costuras-two.vercel.app/)
 
+## Preview
+
+<p align="center">
+  <img src="docs/desktop_preview.gif" alt="Versão desktop" width="600">
+  <img src="docs/phone_preview.gif" alt="Versão celular" width="200">
+</p>
+
 ## Sobre o projeto
 
 Projeto desenvolvido como **atividade de extensão** do curso de Análise e Desenvolvimento de Sistemas (ADS) da **UNIG - Universidade Iguaçu**, no Tema Integrador "Gestão de Carreiras".
